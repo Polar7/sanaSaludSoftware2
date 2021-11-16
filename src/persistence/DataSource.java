@@ -39,19 +39,6 @@ public class DataSource
         return dataSource;
     }
 
-    public ResultSet runQuery(String sql)
-    {
-        ResultSet resultSet = null;
-        try {
-            Statement statement = con.createStatement();
-            resultSet = statement.executeQuery(sql);
-            System.out.println("Successful query: "+sql);
-        } catch (SQLException e) {
-            System.out.println("Query error: "+e.getMessage());
-        }
-        return resultSet;
-    }
-
     public boolean runExecuteUpdate(String sql)
     {
 
