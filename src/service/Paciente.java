@@ -37,4 +37,24 @@ public class Paciente
         cedula = pcedula;
 
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
 }
