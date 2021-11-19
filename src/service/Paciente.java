@@ -57,4 +57,13 @@ public class Paciente
     public String getObservaciones() {
         return observaciones;
     }
+
+    /**
+     * Retorna una cadena con el nombre del paciente
+     * @return Retorna la representación del paciente en una cadena de caracteres.
+     */
+    public String toString( )
+    {
+        return nombre + "-" + cedula;
+    }
 }

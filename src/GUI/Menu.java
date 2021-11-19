@@ -10,32 +10,79 @@ public class Menu {
     private JButton recepcion;
     private JPanel menu;
 
+    /**
+     * Construye la interfaz principal del aplicativo
+     */
     public Menu() {
+        openMenu();
         examenes.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                openExamenes();
             }
         });
         recepcion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                openRecepcion();
             }
         });
         asignaciones.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                openAsignar();
             }
         });
     }
 
-    public static void main(String[] args) {
+    public void openNoExiste()
+    {
+        JOptionPane.showMessageDialog( null, "El paciente con la cedula proporcionada no existe", "Error", JOptionPane.ERROR_MESSAGE );
+    }
+
+    /**
+     * Lanza la ventana de Examenes
+     */
+    void openExamenes(){
+        JFrame frame = new JFrame("Examenes");
+        frame.setContentPane(new Examenes().panelExamenes);
+        frame.pack();
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+
+    /**
+     * Lanza la ventana de Asignacion
+     */
+    void openAsignar(){
+        JFrame frame = new JFrame("Asignar");
+        frame.setContentPane(new Asignar().panelAsignar);
+        frame.pack();
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+
+    /**
+     * Lanza la ventana de recepcion
+     */
+    void openRecepcion(){
+        JFrame frame = new JFrame("Recepcion");
+        frame.setContentPane(new Recepcion().panelRegistrar);
+        frame.pack();
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
+
+
+    void openMenu() {
         JFrame frame = new JFrame("Sana Salud");
-        frame.setContentPane(new Menu().menu);
+        frame.setContentPane(menu);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 }
