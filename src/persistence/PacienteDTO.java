@@ -1,9 +1,10 @@
 package persistence;
 
-import service.Paciente;
-
 import java.io.Serializable;
 
+/**
+ * Clase DTO de un paciente
+ */
 public class PacienteDTO implements Dto, Serializable
 {
     /**
@@ -11,13 +12,45 @@ public class PacienteDTO implements Dto, Serializable
      */
     private static final long serialVersionUID = 568794L;
 
+    /**
+     * Cedula del paciente
+     */
     private double cedula;
+
+    /**
+     * Nombre del paciente
+     */
     private String nombre;
+
+    /**
+     * Edad del paciente
+     */
     private int edad;
+
+    /**
+     * Sexo del paciente
+     */
     private String sexo;
+
+    /**
+     * Direccion del paciente
+     */
     private String direccion;
+
+    /**
+     * Observaciones del paciente
+     */
     private String observaciones;
 
+    /**
+     * Construye una instacia de tipo DTO de un paciente
+     * @param cedula Cedula del paciente. cedula > 0
+     * @param nombre Nombre del paciente. nombre != null && nombre != "".
+     * @param edad Edad del paciente. Edad > 16
+     * @param sexo Sexo del paciente. sexo != null && sexo != "".
+     * @param direccion Direccion del paciente. direccion != null && direccion != "".
+     * @param observaciones Observaciones del paciente.
+     */
     public PacienteDTO(double cedula, String nombre, int edad, String sexo,String direccion, String observaciones)
     {
         this.cedula = cedula;
@@ -28,6 +61,10 @@ public class PacienteDTO implements Dto, Serializable
         this.observaciones = observaciones;
     }
 
+    /**
+     * Crea una instrucción SQL para el paciente
+     * @return La instrucción SQL
+     */
     @Override
     public String insert()
     {

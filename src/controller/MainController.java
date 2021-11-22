@@ -127,7 +127,7 @@ public class MainController
 
     /**
      * Comprueba si aprobó o no el examen de optometría.
-     * @return
+     * @return Una cadena de texto indicando el estado del examen.
      */
     public String comprobarOptometria()  {
         String mensaje = "";

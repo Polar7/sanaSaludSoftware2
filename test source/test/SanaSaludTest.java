@@ -5,6 +5,9 @@ import service.SanaSalud;
 
 import static org.junit.Assert.*;
 
+/**
+ * Clase usada para verificar que los métodos de la clase SanaSalud estén correctamente implementados.
+ */
 public class SanaSaludTest
 {
     // -----------------------------------------------------------------

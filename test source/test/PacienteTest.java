@@ -5,6 +5,9 @@ import service.Paciente;
 
 import static org.junit.Assert.*;
 
+/**
+ * Clase usada para verificar que los métodos de la clase Paciente estén correctamente implementados.
+ */
 public class PacienteTest
 {
     // -----------------------------------------------------------------
