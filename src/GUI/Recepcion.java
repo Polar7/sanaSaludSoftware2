@@ -10,21 +10,69 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Ventana para guardar un paciente
+ */
 public class Recepcion {
 
-
+    /**
+     *
+     */
     public JPanel panelRegistrar;
+
+    /**
+     *
+     */
     private JTextField nombre;
+
+    /**
+     *
+     */
     private JTextField cedula;
+
+    /**
+     *
+     */
     private JTextField edad;
+
+    /**
+     *
+     */
     private JTextField sexo;
+
+    /**
+     *
+     */
     private JTextField direccion;
+
+    /**
+     *
+     */
     private JButton registrar;
+
+    /**
+     *
+     */
     private JButton limpiar;
+
+    /**
+     *
+     */
     private JButton refrescar;
+
+    /**
+     *
+     */
     private JScrollBar scrollBar;
+
+    /**
+     *
+     */
     private JList listaPacientes;
 
+    /**
+     * Construye la ventana de recepcion
+     */
     public Recepcion() {
 
         registrar.addActionListener(new ActionListener() {

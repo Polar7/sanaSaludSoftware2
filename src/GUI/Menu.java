@@ -4,10 +4,29 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Ventana principal de la aplicación.
+ */
 public class Menu {
+
+    /**
+     * Boton para abrir la ventana de examenes
+     */
     private JButton examenes;
+
+    /**
+     * Boton para abrir la ventana de asignaciones
+     */
     private JButton asignaciones;
+
+    /**
+     * Boton para abrir la ventana de recepcion
+     */
     private JButton recepcion;
+
+    /**
+     * Panel de la ventana principal
+     */
     private JPanel menu;
 
     /**
@@ -15,6 +34,7 @@ public class Menu {
      */
     public Menu() {
         openMenu();
+
         examenes.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -35,26 +55,43 @@ public class Menu {
         });
     }
 
+    /**
+     * Lanza una ventana mostrando un error al buscar un paciente
+     */
     public void openNoExiste()
     {
         JOptionPane.showMessageDialog( null, "El paciente con la cedula proporcionada no existe", "Error", JOptionPane.ERROR_MESSAGE );
     }
 
-    public void openErrorAlIngresar()
+    /**
+     * Lanza una ventana mostrando un error al guardar un paciente
+     * @param mensaje Mensaje de error
+     */
+    public void openErrorAlIngresar(String mensaje)
     {
-        JOptionPane.showMessageDialog( null, "Debes ingresar datos validos", "Error", JOptionPane.ERROR_MESSAGE );
+        JOptionPane.showMessageDialog( null, mensaje, "Error", JOptionPane.ERROR_MESSAGE );
     }
 
+    /**
+     * Lanza una ventana con la confirmación de guardado del paciente
+     */
     public void openSeLogroIngresar()
     {
         JOptionPane.showMessageDialog( null, "Se ha ingresado satisfactoriamente al paciente", "Ingreso correcto", JOptionPane.INFORMATION_MESSAGE );
     }
 
+    /**
+     * Lanza una ventana con la confirmacion del guardado en la base de datos
+     * @param mensaje Mensaje a mostrar.
+     */
     public void openOtorgarLicencia(String mensaje)
     {
         JOptionPane.showMessageDialog( null, mensaje, "Guardar en base de datos", JOptionPane.INFORMATION_MESSAGE);
     }
 
+    /**
+     * Lanza una ventana con un mensaje de examen
+     */
     public void openExamenCursado()
     {
         JOptionPane.showMessageDialog( null, "Se ha registrado el resultado de tu examen", "Examen cursado", JOptionPane.INFORMATION_MESSAGE);
@@ -97,6 +134,9 @@ public class Menu {
     }
 
 
+    /**
+     * Lanza la ventana principal
+     */
     void openMenu() {
         JFrame frame = new JFrame("Sana Salud");
         frame.setContentPane(menu);
