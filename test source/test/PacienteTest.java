@@ -5,6 +5,9 @@ import service.Paciente;
 
 import static org.junit.Assert.*;
 
+/**
+ * Clase usada para verificar que los métodos de la clase Paciente estén correctamente implementados.
+ */
 public class PacienteTest
 {
     // -----------------------------------------------------------------
@@ -40,6 +43,7 @@ public class PacienteTest
     // -----------------------------------------------------------------
     // Métodos de prueba
     // -----------------------------------------------------------------
+
     /**
      * <b>Prueba 1</b> : verifica el método constructor de la clase Paciente.<br>
      * <b>Métodos a probar: </b><br>
@@ -75,5 +79,17 @@ public class PacienteTest
         assertEquals( "El sexo del paciente no corresponde", paciente.getSexo( ), "Femenino" );
         assertEquals( "La direccion del paciente no corresponde", paciente.getDireccion( ), "mi otra casa" );
 
+    }
+
+    /**
+     * Prueba 2: Verifica el método toString <b> Métodos a probar: </b> toString <br>
+     * <b> Objetivo: </b> Probar que el método toString retorna la cadena de caractéres correcta
+     * <b> Resultados esperados: </b> <br>
+     * 1. El método toString retorna la cadena de caracteres esperada
+     */
+    @Test
+    public void testToString( )
+    {
+        assertEquals( "La cadena de caracteres no es correcta", "Jean-12345.0", paciente.toString( ) );
     }
 }
