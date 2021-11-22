@@ -40,6 +40,26 @@ public class Menu {
         JOptionPane.showMessageDialog( null, "El paciente con la cedula proporcionada no existe", "Error", JOptionPane.ERROR_MESSAGE );
     }
 
+    public void openErrorAlIngresar()
+    {
+        JOptionPane.showMessageDialog( null, "Debes ingresar datos validos", "Error", JOptionPane.ERROR_MESSAGE );
+    }
+
+    public void openSeLogroIngresar()
+    {
+        JOptionPane.showMessageDialog( null, "Se ha ingresado satisfactoriamente al paciente", "Ingreso correcto", JOptionPane.INFORMATION_MESSAGE );
+    }
+
+    public void openOtorgarLicencia(String mensaje)
+    {
+        JOptionPane.showMessageDialog( null, mensaje, "Guardar en base de datos", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void openExamenCursado()
+    {
+        JOptionPane.showMessageDialog( null, "Se ha registrado el resultado de tu examen", "Examen cursado", JOptionPane.INFORMATION_MESSAGE);
+    }
+
     /**
      * Lanza la ventana de Examenes
      */

@@ -30,7 +30,7 @@ public class Recepcion {
         registrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MainController.getInstance().guardarPaciente(Integer.parseInt(cedula.getText()), nombre.getText(),Integer.parseInt(edad.getText()), sexo.getText(), direccion.getText());
+                MainController.getInstance().guardarPaciente(cedula.getText(), nombre.getText(),edad.getText(), sexo.getText(), direccion.getText());
             }
         });
         refrescar.addActionListener(new ActionListener() {

@@ -1,6 +1,7 @@
 package GUI;
 
 import controller.MainController;
+import service.Paciente;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,15 +18,37 @@ public class Examenes {
     public JPanel panelExamenes;
 
     public Examenes() {
+        registrar.setEnabled(false);
         buscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    MainController.getInstance().verificarPaciente(Integer.parseInt(cedula.getText()));
-                    paciente.setText(MainController.getInstance().verificarPaciente(Integer.parseInt(cedula.getText())).getNombre());
+                    Paciente actual = MainController.getInstance().verificarPaciente(Integer.parseInt(cedula.getText()));
+                    paciente.setText(actual.getNombre());
+                    registrar.setEnabled(true);
                 } catch (Exception ex) {
                     System.out.println(ex.getMessage());
                     paciente.setText("");
+                }
+            }
+        });
+        registrar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    boolean aprobo = false;
+                    Paciente actual = MainController.getInstance().verificarPaciente(Integer.parseInt(cedula.getText()));
+
+                    if(estado.getSelectedItem().toString().equals("Aprobado"))
+                    {
+                        aprobo = true;
+                    }
+
+                    MainController.getInstance().registrarExamen(area.getSelectedItem().toString(), aprobo, historia.getText());
+
+                    historia.setText("");
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
                 }
             }
         });
