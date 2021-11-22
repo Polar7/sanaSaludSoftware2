@@ -1,27 +1,44 @@
 package service;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class SanaSalud
 {
-    private static List<Paciente> pacientesalaEspera;
+    private ArrayList<Paciente> pacientesSalaEspera;
 
-    //internal static List<Paciente> PacienteSalaEspera { get => pacientesalaEspera; set => pacientesalaEspera = value; }
 
-    public static List<Paciente> darListaPacienteSalaEspera()
+    public SanaSalud()
     {
-        return pacientesalaEspera;
+        pacientesSalaEspera = new ArrayList<Paciente>();
     }
 
-    public static void cambiarListaPacienteSalaEspera(List<Paciente> nuevaLista)
+
+    public  ArrayList<Paciente> darListaPacienteSalaEspera()
     {
-        pacientesalaEspera = nuevaLista;
+        return pacientesSalaEspera;
     }
 
-    public void guardarsalaespera(int cedula, String nombre, int edad, String sexo,String direccion)
+    public void cambiarListaPacienteSalaEspera(ArrayList<Paciente> nuevaLista)
+    {
+        pacientesSalaEspera = nuevaLista;
+    }
+
+    public void guardarEnSalaEspera(int cedula, String nombre, int edad, String sexo,String direccion)
     {
         Paciente persona = new Paciente( cedula,nombre,edad,sexo,direccion);
-        pacientesalaEspera.add(persona);
+        pacientesSalaEspera.add(persona);
+    }
+
+    public Paciente buscarPacienteEnSalaEspera(int cedula)
+    {
+        Paciente buscado = null;
+        for (int i = 0; i < pacientesSalaEspera.size(); i++) {
+            if (pacientesSalaEspera.get(i).getCedula() == cedula)
+            {
+                buscado = pacientesSalaEspera.get(i);
+            }
+        }
+        return buscado;
     }
 
 

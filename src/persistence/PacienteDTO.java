@@ -11,27 +11,27 @@ public class PacienteDTO implements Dto, Serializable
      */
     private static final long serialVersionUID = 568794L;
 
-    private int cedula;
+    private double cedula;
     private String nombre;
     private int edad;
     private String sexo;
     private String direccion;
     private String observaciones;
 
-    public PacienteDTO(int cedula, String nombre, int edad, String sexo,String direccion)
+    public PacienteDTO(double cedula, String nombre, int edad, String sexo,String direccion, String observaciones)
     {
         this.cedula = cedula;
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
         this.direccion = direccion;
-        this.observaciones = "";
+        this.observaciones = observaciones;
     }
 
     @Override
     public String insert()
     {
-        String sql = "INSERT INTO public.record(cedula, nombre, edad, sexo, direccion, observaciones) VALUES ("
+        String sql = "INSERT INTO public.pacientes(cedula, nombre, edad, sexo, direccion, observaciones) VALUES ("
                 + cedula + ",'"
                 + nombre.trim() + "',"
                 + edad + ",'"
